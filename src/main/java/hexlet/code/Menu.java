@@ -6,6 +6,7 @@ public class Menu {
         System.out.println("0 - Exit");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         return Utilities.scanInt();
     }
 }
