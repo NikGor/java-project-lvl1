@@ -20,6 +20,7 @@ public class Progression {
         array[0] = (int) (Math.random() * 100);
         int step = (int) (Math.random() * 10);
         int hiddenIndex = (int) (Math.random() * length);
+        System.out.print("Question: ");
         for (int i = 1; i < array.length; i++) {
             array[i] = array[i - 1] + step;
         }
@@ -30,7 +31,7 @@ public class Progression {
         for (int i = hiddenIndex + 1; i < array.length; i++) {
             System.out.printf("%d ", array[i]);
         }
-        System.out.print("\n");
+        System.out.print("\nYour answer: ");
         return Integer.toString(array[hiddenIndex]);
     }
 }

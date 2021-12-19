@@ -19,7 +19,8 @@ public class Gcd {
         int random2 = 1 + (int) (Math.random() * 100);
         int max = Math.max(random1, random2);
         int min = Math.min(random1, random2);
-        System.out.println(String.format("%d %d", random1, random2));
+        System.out.printf("Question: %d %d\n", random1, random2);
+        System.out.print("Your answer: ");
         if (max % min == 0) {
             return Integer.toString(min);
         } else {

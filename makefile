@@ -1,11 +1,11 @@
 install:
 	./gradlew clean install
 
-run-dist:
+run:
 	./build/install/app/bin/app
 
-run:
-	./gradlew clean run
+#run:
+#	./gradlew clean run
 
 lint:
 	./gradlew checkstyleMain

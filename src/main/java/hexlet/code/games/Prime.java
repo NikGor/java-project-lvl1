@@ -16,7 +16,8 @@ public class Prime {
 
     public static String createQuestion() {
         int random = (int) (Math.random() * 100);
-        System.out.printf("%d \n", random);
+        System.out.printf("Question: %d \n", random);
+        System.out.print("Your answer: ");
         for (int i = random - 1; i > 1; i--) {
             if (random % i == 0) {
                 return "no";

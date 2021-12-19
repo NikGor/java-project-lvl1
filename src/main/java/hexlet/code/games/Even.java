@@ -16,7 +16,8 @@ public class Even {
 
     public static String createQuestion() {
         int random = (int) (Math.random() * 100);
-        System.out.println(String.format("Question: %d", random));
+        System.out.printf("Question: %d\n", random);
+        System.out.print("Your answer: ");
         return random % 2 == 0 ? "yes" : "no";
     }
 }

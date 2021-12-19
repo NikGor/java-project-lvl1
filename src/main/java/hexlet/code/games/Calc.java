@@ -23,14 +23,15 @@ public class Calc {
         switch (operation) {
             case (0):
                 expectedAnswer = random1 + random2;
-                question = String.format("%d + %d", random1, random2);
+                question = String.format("Question: %d + %d ", random1, random2);
                 break;
             case (1):
                 expectedAnswer = random1 * random2;
-                question = String.format("%d * %d", random1, random2);
+                question = String.format("Question: %d * %d ", random1, random2);
                 break;
         }
         System.out.println(question);
+        System.out.print("Your answer: ");
         return Integer.toString(expectedAnswer);
     }
 
