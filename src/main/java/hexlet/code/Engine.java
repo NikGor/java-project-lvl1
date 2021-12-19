@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import com.sun.source.tree.ReturnTree;
-
 public class Engine {
     public static boolean checkAnswer(String expectedAnswer, String name) {
         String answer = Utilities.scanString();

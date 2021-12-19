@@ -1,4 +1,5 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 
 public class Calc {
@@ -6,7 +7,7 @@ public class Calc {
         String name = Engine.intro("What is the result of the expression?");
         int counter = 0;
         for (int i = 0; i < 3; i++) {
-            if (Engine.checkAnswer( createQuestion(), name)) {
+            if (Engine.checkAnswer(createQuestion(), name)) {
                 counter++;
             } else break;
         }
