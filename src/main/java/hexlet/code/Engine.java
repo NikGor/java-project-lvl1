@@ -7,7 +7,8 @@ public class Engine {
             System.out.println("Correct!");
             return true;
         } else {
-            System.out.println(String.format("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!", answer, expectedAnswer, name));
+            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!\n",
+                    answer, expectedAnswer, name);
             return false;
         }
     }

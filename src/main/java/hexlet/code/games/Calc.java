@@ -29,6 +29,8 @@ public class Calc {
                 expectedAnswer = random1 * random2;
                 question = String.format("Question: %d * %d ", random1, random2);
                 break;
+            default:
+                break;
         }
         System.out.println(question);
         System.out.print("Your answer: ");

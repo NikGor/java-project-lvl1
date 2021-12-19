@@ -16,7 +16,7 @@ public class Progression {
 
     public static String createQuestion() {
         int length = 5 + (int) (Math.random() * 6);
-        int array[] = new int[length];
+        int[] array = new int[length];
         array[0] = (int) (Math.random() * 100);
         int step = (int) (Math.random() * 10);
         int hiddenIndex = (int) (Math.random() * length);
