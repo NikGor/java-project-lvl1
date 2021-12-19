@@ -3,7 +3,7 @@ package hexlet.code;
 import com.sun.source.tree.ReturnTree;
 
 public class Engine {
-    public static boolean engine(String expectedAnswer, String name) {
+    public static boolean checkAnswer(String expectedAnswer, String name) {
         String answer = Utilities.scanString();
         if (answer.equals(expectedAnswer)) {
             System.out.println("Correct!");
@@ -13,4 +13,17 @@ public class Engine {
             return false;
         }
     }
+
+    public static String intro(String intro) {
+        String name = Cli.wellcome();
+        System.out.println(intro);
+        return name;
+    }
+
+    public static void outro(int counter, String name) {
+        if (counter == 3) {
+            System.out.println(String.format("Congratulations, %s!", name));
+        }
+    }
+
 }
