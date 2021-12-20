@@ -1,6 +1,10 @@
 package hexlet.code;
 
 public class Engine {
+
+    public static final int ITERATIONSNUMBER = 3;
+    public static final int MAXVALUE = 100;
+
     public static boolean checkAnswer(String expectedAnswer, String name) {
         String answer = Utilities.scanString();
         if (answer.equals(expectedAnswer)) {
@@ -20,7 +24,7 @@ public class Engine {
     }
 
     public static void outro(int counter, String name) {
-        if (counter == 3) {
+        if (counter == ITERATIONSNUMBER) {
             System.out.println(String.format("Congratulations, %s!", name));
         }
     }

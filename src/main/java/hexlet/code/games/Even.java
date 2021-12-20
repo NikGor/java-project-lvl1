@@ -6,16 +6,18 @@ public class Even {
     public static void game() {
         String name = Engine.intro("Answer 'yes' if number even otherwise answer 'no'.");
         int counter = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
             if (Engine.checkAnswer(createQuestion(), name)) {
                 counter++;
-            } else break;
+            } else {
+                break;
+            }
         }
         Engine.outro(counter, name);
     }
 
     public static String createQuestion() {
-        int random = (int) (Math.random() * 100);
+        int random = (int) (Math.random() * Engine.MAXVALUE);
         System.out.printf("Question: %d\n", random);
         System.out.print("Your answer: ");
         return random % 2 == 0 ? "yes" : "no";

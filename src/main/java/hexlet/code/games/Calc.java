@@ -6,20 +6,24 @@ public class Calc {
     public static void game() {
         String name = Engine.intro("What is the result of the expression?");
         int counter = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
             if (Engine.checkAnswer(createQuestion(), name)) {
                 counter++;
-            } else break;
+            } else {
+                break;
+            }
         }
         Engine.outro(counter, name);
     }
 
     public static String createQuestion() {
         int expectedAnswer = 0;
+        final int operationsNumber = 2;
+        final int maxValue = 10;
         String question = "";
-        int random1 = (int) (Math.random() * 10);
-        int random2 = (int) (Math.random() * 10);
-        int operation = (int) (Math.random() * 2);
+        int random1 = (int) (Math.random() * maxValue);
+        int random2 = (int) (Math.random() * maxValue);
+        int operation = (int) (Math.random() * operationsNumber);
         switch (operation) {
             case (0):
                 expectedAnswer = random1 + random2;
