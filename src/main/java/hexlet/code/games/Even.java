@@ -4,19 +4,19 @@ import hexlet.code.Engine;
 
 public class Even {
     public static void game() {
-        String name = Engine.intro("Answer 'yes' if number even otherwise answer 'no'.");
+        String name = Engine.rules("Answer 'yes' if number even otherwise answer 'no'.");
         int counter = 0;
         for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
-            if (Engine.checkAnswer(createQuestion(), name)) {
+            if (Engine.checkAnswer(Question(), name)) {
                 counter++;
             } else {
                 break;
             }
         }
-        Engine.outro(counter, name);
+        Engine.successMessage(counter, name);
     }
 
-    public static String createQuestion() {
+    public static String Question() {
         int random = (int) (Math.random() * Engine.MAXVALUE);
         System.out.printf("Question: %d\n", random);
         System.out.print("Your answer: ");

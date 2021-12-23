@@ -17,13 +17,13 @@ public class Engine {
         }
     }
 
-    public static String intro(String intro) {
+    public static String rules(String intro) {
         String name = Cli.wellcome();
         System.out.println(intro);
         return name;
     }
 
-    public static void outro(int counter, String name) {
+    public static void successMessage(int counter, String name) {
         if (counter == ITERATIONSNUMBER) {
             System.out.println(String.format("Congratulations, %s!", name));
         }

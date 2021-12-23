@@ -4,19 +4,19 @@ import hexlet.code.Engine;
 
 public class Gcd {
     public static void game() {
-        String name = Engine.intro("Find the greatest common divisor of given numbers.");
+        String name = Engine.rules("Find the greatest common divisor of given numbers.");
         int counter = 0;
         for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
-            if (Engine.checkAnswer(createQuestion(), name)) {
+            if (Engine.checkAnswer(Question(), name)) {
                 counter++;
             } else {
                 break;
             }
         }
-        Engine.outro(counter, name);
+        Engine.successMessage(counter, name);
     }
 
-    public static String createQuestion() {
+    public static String Question() {
         int random1 = 1 + (int) (Math.random() * Engine.MAXVALUE);
         int random2 = 1 + (int) (Math.random() * Engine.MAXVALUE);
         int max = Math.max(random1, random2);

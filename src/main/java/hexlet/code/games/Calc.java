@@ -4,19 +4,19 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static void game() {
-        String name = Engine.intro("What is the result of the expression?");
+        String name = Engine.rules("What is the result of the expression?");
         int counter = 0;
         for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
-            if (Engine.checkAnswer(createQuestion(), name)) {
+            if (Engine.checkAnswer(Question(), name)) {
                 counter++;
             } else {
                 break;
             }
         }
-        Engine.outro(counter, name);
+        Engine.successMessage(counter, name);
     }
 
-    public static String createQuestion() {
+    public static String Question() {
         int expectedAnswer = 0;
         final int operationsNumber = 2;
         final int maxValue = 10;
