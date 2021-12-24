@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Progression {
     public static void game() {
-        String name = Engine.rules("What number is missing in the progression?");
+        String name = Cli.wellcome();
+        Engine.rules("What number is missing in the progression?");
         int counter = 0;
-        for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
+        for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
             if (Engine.checkAnswer(Question(), name)) {
                 counter++;
             } else {
@@ -23,7 +25,7 @@ public class Progression {
 
         int length = minProgressionLength + (int) (Math.random() * additionalProgressionLength);
         int[] array = new int[length];
-        array[0] = (int) (Math.random() * Engine.MAXVALUE);
+        array[0] = (int) (Math.random() * Engine.MAX_VALUE);
         int step = (int) (Math.random() * maxStepValue);
 
         for (int i = 1; i < array.length; i++) {

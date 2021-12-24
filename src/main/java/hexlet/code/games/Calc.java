@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Calc {
     public static void game() {
-        String name = Engine.rules("What is the result of the expression?");
+        String name = Cli.wellcome();
+        Engine.rules("What is the result of the expression?");
         int counter = 0;
-        for (int i = 0; i < Engine.ITERATIONSNUMBER; i++) {
+        for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
             if (Engine.checkAnswer(Question(), name)) {
                 counter++;
             } else {
