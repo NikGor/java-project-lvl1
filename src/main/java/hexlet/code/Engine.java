@@ -5,12 +5,14 @@ public class Engine {
     public static final int ITERATIONS_NUMBER = 3;
     public static final int MAX_VALUE = 100;
 
-    public static void game(String rules, String question) {
+    public static void game(String rules, String[][] questionsAndAnswers) {
         String name = Cli.wellcome();
         Engine.rules(rules);
         int counter = 0;
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
-            if (Engine.checkAnswer(question, name)) {
+            System.out.printf("Question: %s\n", questionsAndAnswers[0][i]);
+            System.out.print("Your answer: ");
+            if (Engine.checkAnswer(questionsAndAnswers[1][i], name)) {
                 counter++;
             } else {
                 break;

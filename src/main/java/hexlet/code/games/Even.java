@@ -1,29 +1,18 @@
 package hexlet.code.games;
-
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class Even {
     public static void game() {
-        String name = Cli.wellcome();
-        Engine.rules("Answer 'yes' if number even otherwise answer 'no'.");
-        int counter = 0;
-        for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
-            if (Engine.checkAnswer(Question(), name)) {
-                counter++;
-            } else {
-                break;
-            }
-        }
-        Engine.successMessage(counter, name);
+        Engine.game("Answer 'yes' if number even otherwise answer 'no'.", getQuestionsAndAnswers());
     }
 
-    public static String Question() {
-        int random = (int) (Math.random() * Engine.MAX_VALUE);
-        System.out.printf("Question: %d\n", random);
-        System.out.print("Your answer: ");
-        return random % 2 == 0 ? "yes" : "no";
+    public static String[][] getQuestionsAndAnswers() {
+        String[][] questionsAndAnswers = new String[2][Engine.ITERATIONS_NUMBER];
+        for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
+            int random = (int) (Math.random() * Engine.MAX_VALUE);
+            questionsAndAnswers[0][i] = String.valueOf(random);
+            questionsAndAnswers[1][i] = random % 2 == 0 ? "yes" : "no";
+        }
+        return questionsAndAnswers;
     }
 }
