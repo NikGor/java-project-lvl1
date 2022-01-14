@@ -17,11 +17,11 @@ public class Calc {
             int operation = (int) (Math.random() * operationsNumber);
             switch (operation) {
                 case (0):
-                    questionsAndAnswers[0][i] = String.valueOf(random1 + random2);
-                    questionsAndAnswers[1][i] = String.format("Question: %d + %d ", random1, random2);
+                    questionsAndAnswers[0][i] = String.format("%d + %d ", random1, random2);
+                    questionsAndAnswers[1][i] = String.valueOf(random1 + random2);
                     break;
                 case (1):
-                    questionsAndAnswers[0][i] = String.format("Question: %d * %d ", random1, random2);
+                    questionsAndAnswers[0][i] = String.format("%d * %d ", random1, random2);
                     questionsAndAnswers[1][i] = String.valueOf(random1 * random2);
                     break;
                 default:
