@@ -19,5 +19,4 @@ public class Even {
     public static boolean isEven(int numbers) {
         return numbers % 2 == 0;
     }
-
 }

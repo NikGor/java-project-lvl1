@@ -18,12 +18,11 @@ public class Prime {
     }
 
     public static boolean isPrime(int number) {
-        for (int j = number - 1; j > 1; j--) {
+        for (int j = 2; j < number / 2; j++) {
             if (number % j == 0) {
                 return false;
             }
         }
         return true;
     }
-
 }

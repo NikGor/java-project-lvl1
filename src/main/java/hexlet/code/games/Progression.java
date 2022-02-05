@@ -13,9 +13,8 @@ public class Progression {
         final int maxStepValue = 10;
         String[][] questionsAndAnswers = new String[2][Engine.ITERATIONS_NUMBER];
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
-            int length = minProgressionLength + (int) (Math.random() * additionalProgressionLength);
             int[] array = getProgression(minProgressionLength, additionalProgressionLength, maxStepValue);
-            int hiddenIndex = (int) (Math.random() * length);
+            int hiddenIndex = (int) (Math.random() * array.length);
             questionsAndAnswers[0][i] = progressionToString(array, hiddenIndex);
             questionsAndAnswers[1][i] = String.valueOf(array[hiddenIndex]);
         }
@@ -45,4 +44,3 @@ public class Progression {
         return progressionToString;
     }
 }
-
