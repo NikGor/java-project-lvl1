@@ -11,8 +11,13 @@ public class Even {
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
             int random = (int) (Math.random() * Engine.MAX_VALUE);
             questionsAndAnswers[0][i] = String.valueOf(random);
-            questionsAndAnswers[1][i] = random % 2 == 0 ? "yes" : "no";
+            questionsAndAnswers[1][i] = isEven(random) ? "yes" : "no";
         }
         return questionsAndAnswers;
     }
+
+    public static boolean isEven(int numbers) {
+        return numbers % 2 == 0;
+    }
+
 }

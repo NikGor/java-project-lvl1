@@ -12,23 +12,30 @@ public class Gcd {
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
             int random1 = 1 + (int) (Math.random() * Engine.MAX_VALUE);
             int random2 = 1 + (int) (Math.random() * Engine.MAX_VALUE);
-            int max = Math.max(random1, random2);
-            int min = Math.min(random1, random2);
-            questionsAndAnswers[1][i] = String.valueOf(1);
             questionsAndAnswers[0][i] = String.format("%d %d", random1, random2);
-            if (max % min == 0) {
-                questionsAndAnswers[1][i] = String.valueOf(min);
-            } else {
-                int cd = min;
-                while (cd > 1) {
-                    if ((min % cd == 0) && (max % cd) == 0) {
-                        questionsAndAnswers[1][i] = String.valueOf(cd);
-                        break;
-                    }
-                    cd--;
-                }
-            }
+            questionsAndAnswers[1][i] = String.valueOf(getGcd(random1, random2));
         }
         return questionsAndAnswers;
     }
+
+    public static int getGcd(int number1, int number2) {
+        int max = Math.max(number1, number2);
+        int min = Math.min(number1, number2);
+        int gcd = 1;
+        if (max % min == 0) {
+            gcd = min;
+        } else {
+            int cd = min;
+            while (cd > 1) {
+                if ((min % cd == 0) && (max % cd) == 0) {
+                    gcd = cd;
+                    break;
+                }
+                cd--;
+            }
+        }
+        return gcd;
+    }
+
+
 }
