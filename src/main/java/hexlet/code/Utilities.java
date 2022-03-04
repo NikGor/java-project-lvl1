@@ -8,4 +8,9 @@ public class Utilities {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
+
+    public static int getRandom(int maxValue) {
+        return (int) (Math.random() * maxValue);
+    }
+
 }

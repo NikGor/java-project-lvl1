@@ -3,8 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
+
+    public static final String RULES = "What is the result of the expression?";
+
     public static void game() {
-        Engine.game("What is the result of the expression?", getQuestionsAndAnswers());
+        Engine.game(RULES, getQuestionsAndAnswers());
     }
 
     public static String[][] getQuestionsAndAnswers() {
@@ -12,9 +15,9 @@ public class Calc {
         final int maxValue = 10;
         String[][] questionsAndAnswers = new String[2][Engine.ITERATIONS_NUMBER];
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
-            int random1 = (int) (Math.random() * maxValue);
-            int random2 = (int) (Math.random() * maxValue);
-            int operation = (int) (Math.random() * operationsNumber);
+            int random1 = getRandom(maxValue);
+            int random2 = getRandom(maxValue);
+            int operation = getRandom(operationsNumber);
             switch (operation) {
                 case (0):
                     questionsAndAnswers[0][i] = String.format("%d + %d ", random1, random2);

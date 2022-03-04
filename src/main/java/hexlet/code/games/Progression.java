@@ -3,8 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+
+    public static final String RULES = "What number is missing in the progression?";
+
     public static void game() {
-        Engine.game("What number is missing in the progression?", getQuestionsAndAnswers());
+        Engine.game(RULES, getQuestionsAndAnswers());
     }
 
     public static String[][] getQuestionsAndAnswers() {
@@ -14,7 +17,7 @@ public class Progression {
         String[][] questionsAndAnswers = new String[2][Engine.ITERATIONS_NUMBER];
         for (int i = 0; i < Engine.ITERATIONS_NUMBER; i++) {
             int[] array = getProgression(minProgressionLength, additionalProgressionLength, maxStepValue);
-            int hiddenIndex = (int) (Math.random() * array.length);
+            int hiddenIndex = getRandom(array.length);
             questionsAndAnswers[0][i] = progressionToString(array, hiddenIndex);
             questionsAndAnswers[1][i] = String.valueOf(array[hiddenIndex]);
         }
@@ -22,10 +25,10 @@ public class Progression {
     }
 
     public static int[] getProgression(int minProgressionLength, int additionalProgressionLength, int maxStepValue) {
-        int length = minProgressionLength + (int) (Math.random() * additionalProgressionLength);
+        int length = minProgressionLength + getRandom(additionalProgressionLength);
         int[] array = new int[length];
-        array[0] = (int) (Math.random() * Engine.MAX_VALUE);
-        int step = (int) (Math.random() * maxStepValue);
+        array[0] = getRandom(Engine.MAX_VALUE);
+        int step = getRandom(maxStepValue);
         for (int j = 1; j < array.length; j++) {
             array[j] = array[j - 1] + step;
         }
